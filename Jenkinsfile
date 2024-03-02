@@ -3,6 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+              sh 'ls -al'
+              sh 'id'
               sh 'npm install'
             }
         }
