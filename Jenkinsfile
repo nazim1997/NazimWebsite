@@ -18,7 +18,7 @@ pipeline {
             steps {
               echo "Deploying stage"
               sh 'scp dist.tar.gz centos@54.37.66.135:/var/www/html'
-              sh  'ssh centos@54.37.66.135 "tar -xf /var/www/html/dist.tar.gz --strip-components=1"'
+              sh 'ssh centos@54.37.66.135 "tar -xf /var/www/html/dist.tar.gz -C /var/www/html/ --strip-components=1"'
             }
         }
     }
