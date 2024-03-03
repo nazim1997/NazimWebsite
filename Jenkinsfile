@@ -3,20 +3,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-              sh 'pwd'
-              sh 'ls -al'
-              sh 'id'
+              echo "build stage"
               sh 'npm install'
             }
         }
-        stage('Test') {
+        stage('Packaging') {
             steps {
-              echo "Test stage"
+              echo "Creating a package"
+              sh 'npm run build'
+              sh 'tar -czf dist.tar.gz dist'
             }
         }
         stage('Deploy') {
             steps {
-              echo "Deploy stage"
+              echo "Deploying stage"
             }
         }
     }
