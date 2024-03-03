@@ -17,6 +17,8 @@ pipeline {
         stage('Deploy') {
             steps {
               echo "Deploying stage"
+              sh 'scp dist.tar.gz centos@54.37.66.135:/var/www/html'
+              //tar -xzf dist.tar.gz
             }
         }
     }
