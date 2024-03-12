@@ -6,4 +6,4 @@ DEPLOY_DIR="/var/www/html"
 
 npm run build
 
-scp -r dist/* $SERVER_USER@$SERVER_IP:$DEPLOY_DIR
+scp -r ../dist/* $SERVER_USER@$SERVER_IP:$DEPLOY_DIR
